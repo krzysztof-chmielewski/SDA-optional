@@ -12,7 +12,8 @@ public class BaseDefaultPerson implements DefaultPerson {
 
     @Override
     public Person getPersonOrDefault(NullablePersonProvider provider) {
-        return provider.person() == null ? defaultPerson() : provider.person();
+        Person person = provider.person();
+        return person == null ? defaultPerson() : person;
     }
 
     @Override
