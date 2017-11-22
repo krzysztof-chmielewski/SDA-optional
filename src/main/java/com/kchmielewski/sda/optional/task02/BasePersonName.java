@@ -7,12 +7,11 @@ import com.kchmielewski.sda.optional.Person;
 public class BasePersonName implements PersonName {
     @Override
     public String getName(NullablePersonProvider provider) {
-        Person person = provider.person();
-        return person == null ? "" : person.name();
+        return null;
     }
 
     @Override
     public String getName(OptionalPersonProvider provider) {
-        return provider.person().map(Person::name).orElse("");
+        return null;
     }
 }

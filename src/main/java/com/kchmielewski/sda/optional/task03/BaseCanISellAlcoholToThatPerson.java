@@ -6,15 +6,10 @@ import com.kchmielewski.sda.optional.Person;
 
 public class BaseCanISellAlcoholToThatPerson implements CanISellAlcoholToThatPerson {
     public boolean canISellAlcohol(NullablePersonProvider provider) {
-        Person person = provider.person();
-        if (person == null) {
-            throw new IllegalArgumentException();
-        }
-
-        return person.age() >= 18;
+        return false;
     }
 
     public boolean canISellAlcohol(OptionalPersonProvider provider) {
-        return provider.person().orElseThrow(IllegalArgumentException::new).age() >= 18;
+        return false;
     }
 }

@@ -6,12 +6,10 @@ import com.kchmielewski.sda.optional.Person;
 
 public class BaseAmIBruceDickonson implements AmIBruceDickonson {
     public boolean amI(NullablePersonProvider provider) {
-        Person person = provider.person();
-
-        return person != null && person.name().equals("Bruce") && person.surname().equals("Dickonson");
+        return false;
     }
 
     public boolean amI(OptionalPersonProvider provider) {
-        return provider.person().filter(p -> p.name().equals("Bruce") && p.surname().equals("Dickonson")).isPresent();
+        return false;
     }
 }

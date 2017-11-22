@@ -12,12 +12,11 @@ public class BaseDefaultPerson implements DefaultPerson {
 
     @Override
     public Person getPersonOrDefault(NullablePersonProvider provider) {
-        Person person = provider.person();
-        return person == null ? defaultPerson() : person;
+        return null;
     }
 
     @Override
     public Person getPersonOrDefault(OptionalPersonProvider provider) {
-        return provider.person().orElse(defaultPerson());
+        return null;
     }
 }
