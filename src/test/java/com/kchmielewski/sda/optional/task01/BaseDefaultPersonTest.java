@@ -22,6 +22,7 @@ public class BaseDefaultPersonTest {
         assertThat(new BaseDefaultPerson().getPersonOrDefault(new OptionalPersonProvider(null)))
                 .isEqualTo(defaultPerson.defaultPerson());
     }
+
     @Test
     public void forNonNullPersonReturnsDefaultOne() throws Exception {
         assertThat(new BaseDefaultPerson().getPersonOrDefault(new NullablePersonProvider(person)))

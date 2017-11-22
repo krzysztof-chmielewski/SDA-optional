@@ -19,6 +19,7 @@ public class BasePersonNameTest {
     public void forEmptyPersonReturnsDefaultOne() throws Exception {
         assertThat(new BasePersonName().getName(new OptionalPersonProvider(null))).isEqualTo("");
     }
+
     @Test
     public void forNonNullPersonReturnsDefaultOne() throws Exception {
         assertThat(new BasePersonName().getName(new NullablePersonProvider(person))).isSameAs(person.name());
