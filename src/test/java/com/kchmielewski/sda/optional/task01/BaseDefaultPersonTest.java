@@ -12,25 +12,25 @@ public class BaseDefaultPersonTest {
     private final DefaultPerson defaultPerson = new BaseDefaultPerson();
 
     @Test
-    public void forNullPersonReturnsDefaultOne() throws Exception {
+    public void forNullPersonReturnsDefaultOne() {
         assertThat(new BaseDefaultPerson().getPersonOrDefault(new NullablePersonProvider(null)))
                 .isEqualTo(defaultPerson.defaultPerson());
     }
 
     @Test
-    public void forEmptyPersonReturnsDefaultOne() throws Exception {
+    public void forEmptyPersonReturnsDefaultOne() {
         assertThat(new BaseDefaultPerson().getPersonOrDefault(new OptionalPersonProvider(null)))
                 .isEqualTo(defaultPerson.defaultPerson());
     }
 
     @Test
-    public void forNonNullPersonReturnsDefaultOne() throws Exception {
+    public void forNonNullPersonReturnsDefaultOne() {
         assertThat(new BaseDefaultPerson().getPersonOrDefault(new NullablePersonProvider(person)))
                 .isSameAs(person);
     }
 
     @Test
-    public void forNotEmptyPersonReturnsDefaultOne() throws Exception {
+    public void forNotEmptyPersonReturnsDefaultOne() {
         assertThat(new BaseDefaultPerson().getPersonOrDefault(new OptionalPersonProvider(person)))
                 .isSameAs(person);
     }

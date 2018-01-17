@@ -7,7 +7,7 @@ public class PersonTest {
     private final NullPointerTester tester = new NullPointerTester();
 
     @Test
-    public void constructorCannotAcceptNullValues() throws Exception {
+    public void constructorCannotAcceptNullValues() {
         tester.testAllPublicConstructors(Person.class);
     }
 }

@@ -13,34 +13,34 @@ public class BaseCanISellAlcoholToThatPersonTest {
     private final Person olderPerson = new Person("John", "Smith", 18);
 
     @Test
-    public void forNullThrowsException() throws Exception {
+    public void forNullThrowsException() {
         assertThatThrownBy(() -> new BaseCanISellAlcoholToThatPerson().canISellAlcohol(new NullablePersonProvider(null)))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
-    public void forEmptyPersonThrowsException() throws Exception {
+    public void forEmptyPersonThrowsException() {
         assertThatThrownBy(() -> new BaseCanISellAlcoholToThatPerson().canISellAlcohol(new OptionalPersonProvider(null)))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
-    public void forNotNullPersonAgedLessThan18ReturnsFalse() throws Exception {
+    public void forNotNullPersonAgedLessThan18ReturnsFalse() {
         assertThat(new BaseCanISellAlcoholToThatPerson().canISellAlcohol(new NullablePersonProvider(youngPerson))).isSameAs(false);
     }
 
     @Test
-    public void forNotEmptyPersonAgedLessThan18ReturnsFalse() throws Exception {
+    public void forNotEmptyPersonAgedLessThan18ReturnsFalse() {
         assertThat(new BaseCanISellAlcoholToThatPerson().canISellAlcohol(new OptionalPersonProvider(youngPerson))).isSameAs(false);
     }
 
     @Test
-    public void forNotNullPersonAgedMoreOrEqualTo8ReturnsFalse() throws Exception {
+    public void forNotNullPersonAgedMoreOrEqualTo8ReturnsFalse() {
         assertThat(new BaseCanISellAlcoholToThatPerson().canISellAlcohol(new NullablePersonProvider(olderPerson))).isSameAs(true);
     }
 
     @Test
-    public void forNotEmptyPersonAgedMoreOrEqualTo8ReturnsFalse() throws Exception {
+    public void forNotEmptyPersonAgedMoreOrEqualTo8ReturnsFalse() {
         assertThat(new BaseCanISellAlcoholToThatPerson().canISellAlcohol(new OptionalPersonProvider(olderPerson))).isSameAs(true);
     }
 }

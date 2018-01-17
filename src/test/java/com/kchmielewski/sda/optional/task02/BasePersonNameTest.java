@@ -11,22 +11,22 @@ public class BasePersonNameTest {
     private final Person person = new Person("John", "Smith", 13);
 
     @Test
-    public void forNullPersonReturnsDefaultOne() throws Exception {
+    public void forNullPersonReturnsDefaultOne() {
         assertThat(new BasePersonName().getName(new NullablePersonProvider(null))).isEqualTo("");
     }
 
     @Test
-    public void forEmptyPersonReturnsDefaultOne() throws Exception {
+    public void forEmptyPersonReturnsDefaultOne() {
         assertThat(new BasePersonName().getName(new OptionalPersonProvider(null))).isEqualTo("");
     }
 
     @Test
-    public void forNonNullPersonReturnsDefaultOne() throws Exception {
+    public void forNonNullPersonReturnsDefaultOne() {
         assertThat(new BasePersonName().getName(new NullablePersonProvider(person))).isSameAs(person.name());
     }
 
     @Test
-    public void forNotEmptyPersonReturnsDefaultOne() throws Exception {
+    public void forNotEmptyPersonReturnsDefaultOne() {
         assertThat(new BasePersonName().getName(new OptionalPersonProvider(person))).isSameAs(person.name());
     }
 }
